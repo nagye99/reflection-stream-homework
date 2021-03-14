@@ -90,7 +90,7 @@ public class Homework1 {
      * Prints all distinct parameter types of the declared methods of java.lang.String sorted alphabetically.
      */
     public void streamPipeline12() {
-        Arrays.stream(String.class.getDeclaredMethods()).flatMap(met->Arrays.asList(met.getParameterTypes()).stream()).distinct().sorted(Comparator.comparing(met->met.toString())).forEach(System.out::println);
+        Arrays.stream(String.class.getDeclaredMethods()).flatMap(met->Arrays.asList(met.getParameterTypes()).stream()).distinct().sorted(Comparator.comparing(met->met.getName())).forEach(System.out::println);
     }
 
 }
