@@ -75,8 +75,7 @@ public class Homework1 {
      * Returns the maximum number of parameters accepted by the declared methods of java.lang.String.
      */
     public int streamPipeline10() {
-        Arrays.stream(String.class.getDeclaredMethods()).mapToInt(met->met.getParameterCount()).max().getAsInt();
-        return 0;
+        return Arrays.stream(String.class.getDeclaredMethods()).mapToInt(met->met.getParameterCount()).max().getAsInt();
     }
 
     /**
@@ -90,7 +89,7 @@ public class Homework1 {
      * Prints all distinct parameter types of the declared methods of java.lang.String sorted alphabetically.
      */
     public void streamPipeline12() {
-        Arrays.stream(String.class.getDeclaredMethods()).flatMap(met->Arrays.asList(met.getParameterTypes()).stream()).distinct().sorted(Comparator.comparing(met->met.getName())).forEach(System.out::println);
+        Arrays.stream(String.class.getDeclaredMethods()).flatMap(met->Arrays.asList(met.getParameterTypes()).stream()).distinct().sorted(Comparator.comparing(met->met.toString())).forEach(System.out::println);
     }
 
 }
